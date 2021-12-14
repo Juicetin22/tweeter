@@ -1,0 +1,30 @@
+.submit {
+  border-top: 5px solid crimson;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+.write {
+  display: flex;
+  justify-content: space-between;
+}
+
+#tweet-text {
+  flex-grow: 0.97;
+  background-color: rgb(235, 235, 255);
+}
+
+#post-tweet {
+  background-color: #4056A1;
+  border-radius: 5px;
+  padding: 5px 15px 5px 15px;
+  font-family: 'Bungee', cursive;
+  color: #FFFFFF;
+}
+
+.counter {
+  font-family: 'Bungee', cursive;
+}
+
