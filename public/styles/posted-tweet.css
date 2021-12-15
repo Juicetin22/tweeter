@@ -1,6 +1,7 @@
 .unique-tweet {
-  height: 226.8px;
+  height: 280px;
   border: 3px solid;
+  margin-top: 30px;
 }
 
 .tweet-head {
@@ -13,6 +14,7 @@
 .tweet-middle {
   display: flex;
   margin-left: 40px;
+  margin-right: 40px;
 }
 
 .tweet-foot {
@@ -46,6 +48,11 @@
   padding: 0px 2px;
 }
 
-.handle {
+.handle { 
   color: rgb(170, 170, 170);
+}
+
+.user {
+  display: flex;
+  align-items: center;
 }
