@@ -1,10 +1,16 @@
+
 nav {
   height: 120px;
   background-color: #4056A1;
   color: #FFFFFF;
   padding-top: 40px;
+  position: absolute;
   z-index: 999;
   width: 100%;
+}
+
+header {
+  position: absolute;
 }
 
 .navbar {
