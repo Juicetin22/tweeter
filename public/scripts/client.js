@@ -5,7 +5,7 @@
  */
 
 $(() => {
-
+  //sample data to use for testing
   const data = [
     {
       "user": {
@@ -38,7 +38,7 @@ $(() => {
     //followed by the first child of the article tag
     const $tweetHeader = $("<header class='tweet-head'></header>");
     //name and handle are children of the header tag
-    const $tweetName = $(`<p>${tweet.user.avatars}${tweet.user.name}</p>`);
+    const $tweetName = $(`<p class="user"><img src=${tweet.user.avatars}>&nbsp&nbsp${tweet.user.name}</p>`);
     const $tweetHandle = $(`<p class="handle">${tweet.user.handle}</p>`);
     //next is the middle of the article(child of article)
     const $tweetBody = $(`<p class="tweet-middle">${tweet.content.text}</p>`);
@@ -46,14 +46,15 @@ $(() => {
     const $tweetFooter = $("<footer class='tweet-foot'></footer>");
     //date and images are children of the footer tag
     const $tweetDate = $(`<p>${timeago.format(tweet.created_at)}</p>`);
-    const $tweetImages = $("<div class='images'></div>");
+    //create a div that contains the flag, retweet, and heart icons
+    const $tweetImages = $("<div class='images'><i class='fas fa-flag'></i><i class='fas fa-retweet'></i><i class='fas fa-heart'></i></div>");
     //the following i tags pertain to images that are children of the footer tag
-    const $tweetImageOne = $('<i class="fas fa-flag"></i>');
-    const $tweetImageTwo = $('<i class="fas fa-retweet"></i>');
-    const $tweetImageThree = $('<i class="fas fa-heart"></i>');
+    // const $tweetImageOne = $('<i class="fas fa-flag"></i>');
+    // const $tweetImageTwo = $('<i class="fas fa-retweet"></i>');
+    // const $tweetImageThree = $('<i class="fas fa-heart"></i>');
     
-    //we want to then combine them to make the desired tree structure
-    $tweetImages.append($tweetImageOne, $tweetImageTwo, $tweetImageThree);
+    // //we want to then combine them to make the desired tree structure
+    // $tweetImages.append($tweetImageOne, $tweetImageTwo, $tweetImageThree);
     $tweetHeader.append($tweetName, $tweetHandle);
     $tweetFooter.append($tweetDate, $tweetImages);
     //this combines all of substructures to the article tag, which is the container for each individual tweet
@@ -82,4 +83,20 @@ $(() => {
   };
 
   renderTweets(data);
+
+  //listen for a submit event
+  $("#tweet-submit").on("submit", function(event) {
+    //prevent submit to go to another page, as it normally does
+    event.preventDefault();
+    console.log("The Tweet was submitted!");
+    //converts the form data into a query string as the server is configured to take query strings
+    const serialized = $(this).serialize();
+    console.log(serialized);
+
+    //AJAX post request to where the tweets are stored
+    $.post("/tweets", serialized, (response) => {
+      console.log(response);
+    });
+  });
+
 });
