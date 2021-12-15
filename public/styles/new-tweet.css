@@ -1,19 +1,22 @@
 .submit {
-  border-top: 5px solid crimson;
+  border-top: 5px solid rgb(236, 96, 124);
   display: flex;
   justify-content: space-between;
   margin-top: 5px;
+  margin-bottom: 50px;
   padding-top: 5px;
 }
 
 .write {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 #tweet-text {
   flex-grow: 0.97;
   background-color: rgb(235, 235, 255);
+  border-radius: 10px;
 }
 
 #post-tweet {
@@ -28,3 +31,6 @@
   font-family: 'Bungee', cursive;
 }
 
+.negative-num {
+  color: red;
+}
