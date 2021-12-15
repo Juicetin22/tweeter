@@ -54,7 +54,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Have 🫖 to spill?</h2>
-        <form method="POST" action="/tweets/">
+        <form id="tweet-submit" method="POST" action="/tweets/">
           <div class="write">
             <label for="tweet-text">Time for some tea:</label>
             <textarea name="text" id="tweet-text" placeholder="Please spill"></textarea>
@@ -69,7 +69,7 @@
       <div id="tweets-container">
         <article class="unique-tweet">
           <header class="tweet-head">
-            <p><i class="fas fa-kiwi-bird"></i>Raccoon baboon</p>
+            <p class="user"><i class="fas fa-kiwi-bird"></i>Raccoon baboon</p>
             <p class="handle">@raboon</p>
           </header>
           <p class="tweet-middle"><b>Raccoons and baboons noice</b></p>
