@@ -6,17 +6,30 @@
 
 $(() => {
 
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+  const data = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png"
+        ,
+        "handle": "@SirIsaac"
       },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
       },
-    "created_at": 1461116232227
-  }
+      "created_at": 1461116232227
+    },
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd" },
+      "content": {
+        "text": "Je pense , donc je suis"
+      },
+      "created_at": 1461113959088
+    }
+  ];
 
   //function for creating a tweet from the user info object; these new tweets will have classes that will allow them to be stylized as per our css stylesheets
   const createTweetElement = (tweet) => {
@@ -50,9 +63,23 @@ $(() => {
     return $tweet;
   };
 
-  const $tweet = createTweetElement(tweetData);
-  console.log($tweet);
-  $("#tweets-container").append($tweet);
+  // const $tweet = createTweetElement(tweetData);
+  // console.log($tweet);
+  // $("#tweets-container").append($tweet);
 
+  //want to create a function that takes an array of tweets (in object form) and adds it to our main tweet container
+  const renderTweets = (tweets) => {
+    //every time we run this function, we want to have a sort of 'loading point' for the tweet-container or it will continually add on tweets already in the container
+    const $tweetsContainer = $("#tweets-container");
 
+    //want to go through the array of tweet objects
+    for (const tweet of tweets) {
+      //for each tweet object, we want to create the tweet element (structured like in the html)
+      const $tweet = createTweetElement(tweet);
+      //and add it to the main tweets container
+      $("#tweets-container").prepend($tweet);
+    }
+  };
+
+  renderTweets(data);
 });
