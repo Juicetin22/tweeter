@@ -107,6 +107,13 @@ $(() => {
     //AJAX post request to where the tweets are stored
     $.post("/tweets", serialized, (response) => {
       console.log(response);
+      //want to clear the textbox after posting
+      $("#tweet-text").val("");
+      //want to set counter back to max limit after posting
+      $(".counter").text(140);
+      //want to load the webpage again and see that the submitted tweet gets posted (without refreshing the page)  
+      loadTweets();
+      console.log( $(".counter").text());
     });
   });
 
