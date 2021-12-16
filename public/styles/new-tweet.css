@@ -34,3 +34,9 @@
 .negative-num {
   color: red;
 }
+
+.error {
+  border: 4px solid rgb(255, 76, 76);
+  background-color: rgb(255, 214, 214);
+  margin-bottom: 50px;
+}
