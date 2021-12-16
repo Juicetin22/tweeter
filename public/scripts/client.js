@@ -40,21 +40,17 @@ $(() => {
     //name and handle are children of the header tag
     const $tweetName = $(`<p class="user"><img src=${tweet.user.avatars}>&nbsp&nbsp${tweet.user.name}</p>`);
     const $tweetHandle = $(`<p class="handle">${tweet.user.handle}</p>`);
-    //next is the middle of the article(child of article)
-    const $tweetBody = $(`<p class="tweet-middle">${tweet.content.text}</p>`);
+    //next is the middle of the article(child of article) 
+    //note that changed this node to use .text() instead of a template literal to prevent cross-site scripting since it uses user input data!
+    const $tweetBody = $(`<p class="tweet-middle">`).text(tweet.content.text);
     //followed by a footer tag(child of article)
     const $tweetFooter = $("<footer class='tweet-foot'></footer>");
     //date and images are children of the footer tag
     const $tweetDate = $(`<p>${timeago.format(tweet.created_at)}</p>`);
     //create a div that contains the flag, retweet, and heart icons
     const $tweetImages = $("<div class='images'><i class='fas fa-flag'></i><i class='fas fa-retweet'></i><i class='fas fa-heart'></i></div>");
-    //the following i tags pertain to images that are children of the footer tag
-    // const $tweetImageOne = $('<i class="fas fa-flag"></i>');
-    // const $tweetImageTwo = $('<i class="fas fa-retweet"></i>');
-    // const $tweetImageThree = $('<i class="fas fa-heart"></i>');
-    
-    // //we want to then combine them to make the desired tree structure
-    // $tweetImages.append($tweetImageOne, $tweetImageTwo, $tweetImageThree);
+   
+    //we want to then combine them to make the desired tree structure
     $tweetHeader.append($tweetName, $tweetHandle);
     $tweetFooter.append($tweetDate, $tweetImages);
     //this combines all of substructures to the article tag, which is the container for each individual tweet
@@ -91,12 +87,10 @@ $(() => {
   
     //if the number of characters in the textbox is equal to 0, ie. textbox is empty, prevent submission and alert user
     if ($("#tweet-text").val().length === 0) {
-      alert("Cannot post an empty tweet!");
-      return;
+      return alert("Cannot post an empty tweet!");
     //if number of characters in the textbox is > 140, prevent submission of tweet and alert user
     } else if ($("#tweet-text").val().length > 140) {
-      alert("Your tweet exceeds the maximum allowed number of characters!");
-      return;
+      return alert("Your tweet exceeds the maximum allowed number of characters!");
     }
     
     console.log("The Tweet was submitted!");
