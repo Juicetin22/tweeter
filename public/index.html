@@ -51,23 +51,25 @@
     </header>
   
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main>
       <section class="new-tweet">
         <h2>Have 🫖 to spill?</h2>
         <form id="tweet-submit" method="POST" action="/tweets/">
           <div class="write">
             <label for="tweet-text">Time for some tea:</label>
-            <textarea name="text" id="tweet-text" placeholder="Please spill"></textarea>
+            <textarea autocomplete="off" name="text" id="tweet-text" placeholder="Please spill"></textarea>
           </div>
           <div class="submit">
             <button id="post-tweet" type="submit">Tweet It</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+        <!-- <p class="error">‼️ <b>Cannot post an empty tweet!</b> ‼️</p>
+        <p class="error">‼️ <b>Exceeds the maximum allowed number of characters!</b> ‼️</p> -->
       </section>
       
       <div id="tweets-container">
-        <article class="unique-tweet">
+        <!-- <article class="unique-tweet">
           <header class="tweet-head">
             <p class="user"><i class="fas fa-kiwi-bird"></i>Raccoon baboon</p>
             <p class="handle">@raboon</p>
@@ -96,15 +98,9 @@
               <i class="fas fa-heart"></i>
             </div>
           </footer>
-        </article>
+        </article> -->
+        <br>
       </div>
-
-      <p>hihi</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere sequi praesentium sapiente, dolore et explicabo laudantium, non minima enim nulla ducimus quibusdam iusto dignissimos ut. Corrupti, nesciunt. Tenetur, officia unde!</p>
-      <br>
-      <br>
-      <br>
-      <p>pp</p>
     </main>
 
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
