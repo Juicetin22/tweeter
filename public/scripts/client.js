@@ -99,4 +99,26 @@ $(() => {
     });
   });
 
+  //function to load the tweets onto the web browser
+  const loadTweets = () => {
+    //AJAX get request to the server tweet "database", handling a json response
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+      dataType: "json",
+      //if the request goes through, pass the data retrieved through the renderTweet function to render them to the DOM
+      success: (tweets) => {
+        console.log("data", tweets);
+        renderTweets(tweets);
+      },
+      //if the request has an issue or is unsuccessful, print an error message
+      error: (err) => {
+        console.log("error:", err);
+      } 
+    });
+  };
+
+  //call the function to load up the tweets on the webpage
+  loadTweets();
+
 });
