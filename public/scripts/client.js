@@ -84,13 +84,22 @@ $(() => {
   $("#tweet-submit").on("submit", function(event) {
     //prevent submit to go to another page, as it normally does
     event.preventDefault();
-  
+    //remove error message node each time submit button is clicked so the message doesn't chain
+    $(".error").remove();
     //if the number of characters in the textbox is equal to 0, ie. textbox is empty, prevent submission and alert user
     if ($("#tweet-text").val().length === 0) {
-      return alert("Cannot post an empty tweet!");
+      //add a new child to the new-tweet container, containing the error message for empty tweet
+      $(".new-tweet").append($(`<p class="error">‼️ <b>Cannot post an empty tweet!</b> ‼️</p>`));
+      const $error = $(".error");
+      //stop the function and have the error message appear
+      return $error.hide().slideDown(250);
     //if number of characters in the textbox is > 140, prevent submission of tweet and alert user
     } else if ($("#tweet-text").val().length > 140) {
-      return alert("Your tweet exceeds the maximum allowed number of characters!");
+      //add a new child to the new-tweet container, containing the error message for max characters limit
+      $(".new-tweet").append($(`<p class="error">‼️ <b>Exceeds the maximum allowed number of characters!</b> ‼️</p>`));
+      const $error = $(".error");
+      //similar to above return; have error message appear
+      return $error.hide().slideDown(250);
     }
     
     console.log("The Tweet was submitted!");
