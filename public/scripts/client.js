@@ -88,6 +88,17 @@ $(() => {
   $("#tweet-submit").on("submit", function(event) {
     //prevent submit to go to another page, as it normally does
     event.preventDefault();
+  
+    //if the number of characters in the textbox is equal to 0, ie. textbox is empty, prevent submission and alert user
+    if ($("#tweet-text").val().length === 0) {
+      alert("Cannot post an empty tweet!");
+      return;
+    //if number of characters in the textbox is > 140, prevent submission of tweet and alert user
+    } else if ($("#tweet-text").val().length > 140) {
+      alert("Your tweet exceeds the maximum allowed number of characters!");
+      return;
+    }
+    
     console.log("The Tweet was submitted!");
     //converts the form data into a query string as the server is configured to take query strings
     const serialized = $(this).serialize();
