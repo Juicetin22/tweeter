@@ -4,6 +4,11 @@ Tweeter is a simple, single-page Twitter clone utilizing jQuery, AJAX, HTML5, an
 
 ## Final Product
 
+!["Screenshot of webpage from a larger screen"](https://github.com/Juicetin22/tweeter/blob/master/docs/webpage-larger-screen.png)
+
+!["Screenshot of webpage from a smaller screen"](https://github.com/Juicetin22/tweeter/blob/master/docs/webpage-smaller-screen.png)
+
+!["Screenshot of error message when exceeding character limit"](https://github.com/Juicetin22/tweeter/blob/master/docs/exceed-character-error.png) 
 
 ## Dependencies
 
