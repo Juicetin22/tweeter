@@ -1,8 +1,10 @@
 nav {
   height: 120px;
-  background-color: #4056A1;
+  background-color: #742c91;
   color: #FFFFFF;
   padding-top: 40px;
+  padding-left: 5px;
+  padding-right: 5px;
   position: fixed;
   z-index: 999;
   width: 100%;
@@ -31,5 +33,11 @@ header {
 }
 
 #arrow {
-  color: rgb(199, 53, 133);
+  color: rgb(103, 180, 204);
+}
+
+@media screen and (min-width: 852px) {
+  nav {
+    background-color: #742c91;
+  }
 }
