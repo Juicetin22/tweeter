@@ -22,17 +22,16 @@ body {
   text-align: center;
 }
 
+/*making containers inside the body slightly smaller than the body*/
 main {
   margin: auto;
   width: 90%;
 
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
+/*media query to adapt styles to better support view for larger screens like desktops and bigger tablets*/
 @media screen and (min-width: 852px) {
+  /*wanted the header and main to be side by side for larger screens*/
   body {
     display: flex;
   }

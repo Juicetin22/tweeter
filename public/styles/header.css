@@ -1,17 +1,21 @@
+/*styles for the header section of the page */
 #website-head {
   height: 520px;
   width: 100%;
   display: flex;
   flex-direction: column;
+  color: #ffffff;
   position: relative;
   background-color: #338cf3;
   background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
 }
 
+/*additional style for the picture*/
 #profile {
   margin-top: 150px;
 }
 
+/*media query to adapt styles to better support view for larger screens like desktops and bigger tablets*/
 @media screen and (min-width: 852px) {
   #website-head {
     background-color: #f4f1ec;
