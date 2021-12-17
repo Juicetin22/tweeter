@@ -7,20 +7,14 @@
   padding-top: 5px;
 }
 
-.write {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 #tweet-text {
-  flex-grow: 0.97;
+  width: 100%;
   background-color: rgb(235, 235, 255);
   border-radius: 10px;
 }
 
 #post-tweet {
-  background-color: #4056A1;
+  background-color: #742c91;
   border-radius: 5px;
   padding: 5px 15px 5px 15px;
   font-family: 'Bungee', cursive;
@@ -37,6 +31,10 @@
 
 .error {
   border: 4px solid rgb(255, 76, 76);
-  background-color: rgb(255, 214, 214);
+  background-color: rgb(255, 227, 227);
   margin-bottom: 50px;
+}
+
+.new-tweet {
+  margin-top: 20px;
 }
