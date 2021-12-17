@@ -35,9 +35,3 @@ header {
 #arrow {
   color: rgb(103, 180, 204);
 }
-
-@media screen and (min-width: 852px) {
-  nav {
-    background-color: #742c91;
-  }
-}
