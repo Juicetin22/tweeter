@@ -3,12 +3,33 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
-  background-color: #848096;
+  background-color: #338cf3;
   background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
 }
 
 #profile {
   margin-top: 150px;
+}
+
+@media screen and (min-width: 852px) {
+  #website-head {
+    background-color: #f4f1ec;
+    background-image: unset;
+    margin-top: 210px;
+  }
+
+  .account {
+    background-color: #338cf3;
+    background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+    width: 80%;
+    height: auto;
+    margin-left: 35px;
+    color: #ffffff;
+  }
+
+  #profile {
+    margin: 20px;
+    margin-bottom: -20px;
+  }
 }
