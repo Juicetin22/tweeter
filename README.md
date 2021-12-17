@@ -24,4 +24,4 @@ Tweeter is a simple, single-page Twitter clone utilizing jQuery, AJAX, HTML5, an
 2. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 3. Go to <http://localhost:8080/> in your browser.
 4. To post a tweet, go to the very inviting textbox and type in what you want to tell the world!
-5. See the message get transform into a tweet below right before your eyes!
+5. See the message get transformed into a tweet below right before your eyes!
