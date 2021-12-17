@@ -41,23 +41,19 @@
     </nav>
 
     <header id="website-head">
-      <div>
+      <div class="account"> 
         <img id="profile" src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
         <h2>Justin Huang</h2>
       </div>
     </header>
   
     <!-- Page-specific (main) content here -->
-    <main>
+    <main class="main-body">
       <section class="new-tweet">
         <h2>Have 🫖 to spill?</h2>
         <form id="tweet-submit" method="POST" action="/tweets/">
-          <div class="write">
-            <label for="tweet-text">Time for some tea:</label>
-            <textarea autocomplete="off" name="text" id="tweet-text" placeholder="Please spill"></textarea>
+          <div>
+            <textarea autocomplete="off" name="text" id="tweet-text" placeholder="Please share!"></textarea>
           </div>
           <div class="submit">
             <button id="post-tweet" type="submit">Tweet It</button>
