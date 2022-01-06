@@ -21,15 +21,13 @@ $(() => {
     //this combines all of substructures to the article tag, which is the container for each individual tweet
     $tweet.append($tweetHeader, $tweetBody, $tweetFooter);
 
-    //we want to return this combined tweet
     return $tweet;
   };
 
   //want to create a function that takes an array of tweets (in object form) and adds it to our main tweet container
   const renderTweets = (tweets) => {
     //every time we run this function, we want to have a sort of 'loading point' for the tweet-container or it will continually add on tweets already in the container
-    const $tweetsContainer = $("#tweets-container");
-
+    $("#tweets-container").empty();
     //want to go through the array of tweet objects
     for (const tweet of tweets) {
       //for each tweet object, we want to create the tweet element (structured like in the html)
@@ -59,7 +57,6 @@ $(() => {
       //add a new child to the new-tweet container, containing the error message for max characters limit
       $(".new-tweet").append($(`<p class="error">⚠️ <b>Exceeds the maximum allowed number of characters!</b> ⚠️</p>`));
       const $error = $(".error");
-      //similar to above return; have error message appear
       return $error.hide().slideDown(250);
     }
     
